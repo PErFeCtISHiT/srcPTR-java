@@ -1,0 +1,3 @@
+/home/somnus/CLionProjects/srcPtr/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/somnus/CLionProjects/srcPtr/src/cmake-build-debug/CMakeFiles/srcptr.dir
+/home/somnus/CLionProjects/srcPtr/src/cmake-build-debug/CMakeFiles/edit_cache.dir

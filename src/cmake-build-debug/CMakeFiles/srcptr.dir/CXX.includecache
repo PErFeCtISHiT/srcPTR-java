@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/somnus/CLionProjects/srcPtr/src/srcptr.cpp
+srcSAXEventDispatcher.hpp
+-
+srcSAXHandler.hpp
+-
+srcSAXHandler.hpp
+-
+srcPtrDeclPolicy.hpp
+-
+srcPtrPolicy.hpp
+-
+srcPtrPolicyTemplates.hpp
+-
+fstream
+-
+iostream
+-
+string
+-
+chrono
+-
+boost/program_options.hpp
+-
+

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/TestsrcPtrPolicy.dir/TestsrcPtrPolicy.o  -o bin/TestsrcPtrPolicy -lsrcsaxeventdispatch -lsrcsax_static -lsrcml 

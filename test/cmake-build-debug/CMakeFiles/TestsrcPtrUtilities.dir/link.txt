@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/TestsrcPtrUtilities.dir/TestsrcPtrUtilities.o  -o bin/TestsrcPtrUtilities -lsrcsaxeventdispatch -lsrcsax_static -lsrcml 

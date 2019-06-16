@@ -1,0 +1,9 @@
+/home/somnus/CLionProjects/srcPtr/test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/somnus/CLionProjects/srcPtr/test/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/somnus/CLionProjects/srcPtr/test/cmake-build-debug/CMakeFiles/TestDisjointSet.dir
+/home/somnus/CLionProjects/srcPtr/test/cmake-build-debug/CMakeFiles/TestsrcPtrDeclPolicy.dir
+/home/somnus/CLionProjects/srcPtr/test/cmake-build-debug/CMakeFiles/TestsrcPtrUtilities.dir
+/home/somnus/CLionProjects/srcPtr/test/cmake-build-debug/CMakeFiles/TestsrcPtrPolicy.dir
+/home/somnus/CLionProjects/srcPtr/test/cmake-build-debug/CMakeFiles/TestClassPolicy.dir
+/home/somnus/CLionProjects/srcPtr/test/cmake-build-debug/CMakeFiles/TestCallPolicy.dir
+/home/somnus/CLionProjects/srcPtr/test/cmake-build-debug/CMakeFiles/TestsrcPtrPolicyTemplates.dir

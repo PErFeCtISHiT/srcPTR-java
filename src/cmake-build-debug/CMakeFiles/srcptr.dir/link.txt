@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/srcptr.dir/srcptr.o  -o srcptr -lsrcsaxeventdispatch -lsrcsax_static 

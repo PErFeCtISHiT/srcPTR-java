@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/TestDisjointSet.dir/TestDisjointSet.o  -o bin/TestDisjointSet -lsrcsaxeventdispatch -lsrcsax_static -lsrcml 

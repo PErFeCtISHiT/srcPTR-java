@@ -1,0 +1,29 @@
+/home/somnus/下载/CLion-2019.1.4/clion-2019.1.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/somnus/CLionProjects/srcPtr/srcml
+Package libcurl was not found in the pkg-config search path.
+Perhaps you should add the directory containing `libcurl.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'libcurl' found
+Package libcurl was not found in the pkg-config search path.
+Perhaps you should add the directory containing `libcurl.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'libcurl' found
+-- Boost version: 1.65.1
+-- Found the following Boost libraries:
+--   program_options
+--   filesystem
+--   system
+--   thread
+--   regex
+--   date_time
+--   chrono
+--   atomic
+-- Could NOT find LibXslt (missing: LIBXSLT_LIBRARIES LIBXSLT_INCLUDE_DIR) 
+CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
+Please set them or make sure they are set and tested correctly in the CMake files:
+ANTLR_LIBRARY
+    linked by target "srcml_static" in directory /home/somnus/CLionProjects/srcPtr/srcml/src
+    linked by target "srcml_shared" in directory /home/somnus/CLionProjects/srcPtr/srcml/src
+
+-- Configuring incomplete, errors occurred!
+See also "/home/somnus/CLionProjects/srcPtr/srcml/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/home/somnus/CLionProjects/srcPtr/srcml/cmake-build-debug/CMakeFiles/CMakeError.log".

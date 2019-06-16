@@ -70,9 +70,11 @@ int main(int argc, char *argv[]) {
       srcPtrDeclPolicy *declpolicy = new srcPtrDeclPolicy();
 
       // First Run
-      srcSAXController control(vm["input"].as<std::vector<std::string>>()[0].c_str());
+      srcSAXController control(vm["input"].as<std::vector<std::string>>()[1].c_str());
       srcSAXEventDispatch::srcSAXEventDispatcher<> handler{declpolicy}; //TODO: correct policy usage
       control.parse(&handler);
+      srcSAXController controll(vm["input"].as<std::vector<std::string>>()[0].c_str());
+      controll.parse(&handler);
 
       if(vm.count("timer")) {
          auto end = std::chrono::high_resolution_clock::now();
@@ -87,15 +89,17 @@ int main(int argc, char *argv[]) {
          srcPtrPolicy<srcPtrAndersen> *policy = new srcPtrPolicy<srcPtrAndersen>(declData);
 
          // Second Run
-         srcSAXController control2(vm["input"].as<std::vector<std::string>>()[0].c_str());
+         srcSAXController control2(vm["input"].as<std::vector<std::string>>()[1].c_str());
          srcSAXEventDispatch::srcSAXEventDispatcher<> handler2{policy};
          control2.parse(&handler2);
-
+         srcSAXController control2l(vm["input"].as<std::vector<std::string>>()[0].c_str());
+         control2l.parse(&handler2);
          data = policy->GetData();
          if(vm.count("graphviz"))
             data->PrintGraphViz();
          else
             data->Print();
+
       } else if(vm.count("steensgaard")) {
 
          srcPtrDeclPolicy::srcPtrDeclData declData = declpolicy->GetData();

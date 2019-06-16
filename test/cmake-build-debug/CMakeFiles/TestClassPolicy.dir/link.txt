@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/TestClassPolicy.dir/TestClassPolicy.o  -o bin/TestClassPolicy -lsrcsaxeventdispatch -lsrcsax_static -lsrcml 
