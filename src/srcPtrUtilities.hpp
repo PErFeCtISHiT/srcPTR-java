@@ -32,6 +32,7 @@
 #include <utility>
 #include <vector>
 #include <unordered_map>
+#include <cstring>
 
 struct Variable {
    Variable() {
@@ -187,7 +188,12 @@ public:
    bool ContainsVariableName(std::string name) {
       return (variables.find(name) != variables.end());
    }
-
+    void ContainsAndAddVariableName(std::string name,std::vector<Variable> *ret) {
+        for (auto i = variables.begin(); i != variables.end(); ++i) {
+            if (std::strstr(name.c_str(),i->second.nameofidentifier.c_str()))
+                ret->push_back(variables[i->second.nameofidentifier]);
+        }
+    }
    Variable GetVar(std::string name) {
       return variables[name];
    }
@@ -250,6 +256,13 @@ public:
       Variable var; 
       return var;
    }
+   std::vector<Variable> GetPreviousVarOccurences(std::string name){
+       std::vector<Variable> ret;
+       for (auto it = declared.begin(); it != declared.end(); ++it) {
+           it->ContainsAndAddVariableName(name,&ret);
+       }
+       return ret;
+   }
 
    void AddFuncToFrame(Function func) {
       declared.begin()->AddFunc(func);
@@ -296,12 +309,14 @@ public:
       methods.clear();
       members.clear();
       isStruct = false;
+      filename = "";
    }
 
    std::string className;
    bool isStruct = false;  //False -> Class; True -> Struct
    std::vector<Function> methods;
    std::vector<Variable> members;
+   std::string filename;
 };
 
 class ClassTracker {
@@ -310,8 +325,9 @@ public:
       return classes[name]; 
    }
 
-   void AddClass(Class toAdd) {
+   void AddClass(Class toAdd,std::string filename = "") {
       classes[toAdd.className] = toAdd;
+      classes[toAdd.className].filename = std::move(filename);
    }
 
    bool ContainsKey(std::string name) { 
