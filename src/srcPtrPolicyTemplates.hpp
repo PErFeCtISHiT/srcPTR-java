@@ -80,7 +80,7 @@ public:
 
    void PrintGraphViz() {
       Finalize();
-      std::cout << "digraph pointers {\n";
+      std::cout << "digraph pointers{\n";
 
       for (auto x : pointsto) {
          for (auto y : x.second) {

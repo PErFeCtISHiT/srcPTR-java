@@ -1,3 +1,5 @@
+#include <utility>
+
 /**
  * @file srcPtrDeclPolicy.hpp
  *
@@ -40,6 +42,7 @@ public:
    struct srcPtrDeclData {
       ClassTracker classTracker;
       FunctionTracker functionTracker;
+      std::string filename;
    };
 
    ~srcPtrDeclPolicy() {
@@ -61,12 +64,11 @@ public:
          data.functionTracker.AddFunction(signatureData);
       } else if (typeid(ClassPolicy) == typeid(*policy)) {
          std::vector<Class> classData = *policy->Data<std::vector<Class>>();
-         for(int i = 0; i < classData.size(); ++i) {
-            data.classTracker.AddClass(classData[i]);
+         for(const auto & i : classData) {
+            data.classTracker.AddClass(i,data.filename);
          }
       }
    }
-
    srcPtrDeclData GetData() {
       return data;
    }

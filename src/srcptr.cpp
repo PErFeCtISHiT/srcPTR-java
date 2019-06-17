@@ -70,11 +70,12 @@ int main(int argc, char *argv[]) {
       srcPtrDeclPolicy *declpolicy = new srcPtrDeclPolicy();
 
       // First Run
-      srcSAXController control(vm["input"].as<std::vector<std::string>>()[1].c_str());
-      srcSAXEventDispatch::srcSAXEventDispatcher<> handler{declpolicy}; //TODO: correct policy usage
-      control.parse(&handler);
-      srcSAXController controll(vm["input"].as<std::vector<std::string>>()[0].c_str());
-      controll.parse(&handler);
+       srcSAXEventDispatch::srcSAXEventDispatcher<> handler{declpolicy}; //TODO: correct policy usage
+      for(const std::string& str : vm["input"].as<std::vector<std::string>>()) {
+          srcSAXController control(str.c_str());
+          declpolicy->data.filename = str;
+          control.parse(&handler);
+      }
 
       if(vm.count("timer")) {
          auto end = std::chrono::high_resolution_clock::now();

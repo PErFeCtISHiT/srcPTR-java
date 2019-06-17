@@ -235,19 +235,20 @@ private:
    }
 
    void ResolveAssignment(Variable leftVar, std::string modifierleft, std::string right, std::string modifierright) {
-      Variable rightVar = declared.GetPreviousVarOccurence(right);
-
-      if(!rightVar.empty()) {
-         if(leftVar.isPointer && (modifierleft != "*")) {
-            if(modifierright == "&")
-               data.AddPointsToRelationship(leftVar, rightVar);
-            else
-               data.AddAssignmentRelationship(leftVar, rightVar);
-         }
-         else if (leftVar.isReference) {
-            data.AddPointsToRelationship(leftVar, rightVar);
-         }
-      }
+      std::vector<Variable> rightVars = declared.GetPreviousVarOccurences(right);
+       for (auto rightVar : rightVars) {
+           if(!rightVar.empty()) {
+               if(leftVar.isPointer && (modifierleft != "*")) {
+                   if(modifierright == "&")
+                       data.AddPointsToRelationship(leftVar, rightVar);
+                   else
+                       data.AddAssignmentRelationship(leftVar, rightVar);
+               }
+               else if (leftVar.isReference) {
+                   data.AddPointsToRelationship(leftVar, rightVar);
+               }
+           }
+       }
    }
 
 
