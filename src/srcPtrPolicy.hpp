@@ -30,7 +30,7 @@
 #include <srcSAXHandler.hpp>
 
 #include <srcPtrDeclPolicy.hpp>
-#include <srcPtrUtilities.hpp>
+
 
 #include <algorithm>
 #include <exception>
@@ -70,13 +70,14 @@ public:
       declTypePolicy = new DeclTypePolicy({this});
       callPolicy = new CallPolicy({this});
       funcSigPolicy = new FunctionSignaturePolicy({this});
-
+      isThirdRun = false;
       InitializeEventHandlers();
    }
 
    void Notify(const PolicyDispatcher *policy, const srcSAXEventDispatch::srcSAXEventContext &ctx) override {
       if (typeid(DeclTypePolicy) == typeid(*policy)) {
          DeclData declarationData = *policy->Data<DeclData>();
+         if(!isThirdRun)
          declared.AddVarToFrame(Variable(declarationData));
 
          //If variable is an object, keep track of it's methods and members
@@ -87,12 +88,13 @@ public:
             if(declarationData.isPointer)
                accessor = "->";
 
-            for(int i = 0; i < classType.methods.size(); ++i) {
-               declared.AddFuncToFrame(declarationData.nameofidentifier + accessor + classType.methods[i].name, classType.methods[i]);
+             if(!isThirdRun)
+            for(auto & method : classType.methods) {
+               declared.AddFuncToFrame(declarationData.nameofidentifier + accessor + method.name, method);
             }
 
-            for(int i = 0; i < classType.members.size(); ++i) {
-               Variable v = classType.members[i];
+             if(!isThirdRun)
+            for(auto v : classType.members) {
                std::string newName = declarationData.nameofidentifier + accessor + v.nameofidentifier;
                v.nameofidentifier = newName;
                declared.AddVarToFrame(v);
@@ -166,6 +168,7 @@ public:
       else if (typeid(FunctionSignaturePolicy) == typeid(*policy)) {
          FunctionSignaturePolicy::SignatureData signatureData = *policy->Data<FunctionSignaturePolicy::SignatureData>();
          Function funcSig = signatureData;
+          if(!isThirdRun)
          for(Variable var : funcSig.parameters) {
             declared.AddVarToFrame(var);
          }
@@ -176,18 +179,29 @@ public:
       T *p = &data;
       return p;
    }
+    void setThirdRun(){
+        this->isThirdRun = true;
+    }
+
+    std::vector<DataDependency>* GetDataDependencies(){
+        return &Dependencies;
+   }
+
 
 protected:
    void *DataInner() const override {
       return data.Clone();
    }
-
 private:
    T data;
 
    // Code information
    srcPtrDeclPolicy::srcPtrDeclData declData;
    DeclStack declared;
+
+    //Third run
+    bool isThirdRun;
+    std::vector<DataDependency> Dependencies;
 
    // Policies
    DeclTypePolicy *declTypePolicy;
@@ -216,10 +230,44 @@ private:
       withinDeclAssignment = false;
    }
 
+   void ResolveAssignmentDataDependency(std::string left,std::string right){
+       if (left.find("this.") != std::string::npos)
+           left = left.substr(5);
+       if(right.find("this.") != std::string::npos)
+           right = right.substr(5);
+       Variable leftVar = declared.GetPreviousVarOccurence(left);
+       Class *leftClass;
+       if(left.find('.') != std::string::npos)
+           leftClass = declData.classTracker.GetClassAddress(left.substr(0,left.find('.')));
+       else
+           leftClass = declData.classTracker.GetClassAddressByMemberName(left);
+       if(!leftClass->className.empty())
+           leftVar.className.push(leftClass->className);
+       right = right.substr(right.find('.') + 1);
+       std::vector<Variable> rightVars = declared.GetPreviousVarOccurences(right);
+       for(Variable v : rightVars){
+           Class *rightClass = declData.classTracker.GetClassAddressByMemberName(right);
+           if(leftClass->className != rightClass->className) {
+
+               DataDependency dataDependency(*leftClass, *rightClass, leftVar, v);
+               Dependencies.push_back(dataDependency);
+           }
+           if(!v.className.empty()){
+               Class *rightClass1 = declData.classTracker.GetClassAddress(v.className.top());
+               if(leftClass->className != rightClass1->className) {
+                   DataDependency dataDependency1(*leftClass, *rightClass1, leftVar, v);
+                   Dependencies.push_back(dataDependency1);
+               }
+           }
+       }
+   }
 
    void ResolveAssignment(std::string left, std::string modifierleft, std::string right, std::string modifierright) {
       Variable leftVar = declared.GetPreviousVarOccurence(left);
       Variable rightVar = declared.GetPreviousVarOccurence(right);
+      if(isThirdRun){
+          ResolveAssignmentDataDependency(left,right);
+      }
 
       if(!rightVar.empty()) {
          if(leftVar.isPointer && (modifierleft != "*")) {
@@ -249,6 +297,9 @@ private:
                }
            }
        }
+       if(isThirdRun){
+           ResolveAssignmentDataDependency(leftVar.nameofidentifier,right);
+       }
    }
 
 
@@ -262,7 +313,9 @@ private:
       };
 
       openEventMap[ParserState::block] = [this](srcSAXEventContext &ctx) { declared.CreateFrame(); };
-      closeEventMap[ParserState::block] = [this](srcSAXEventContext &ctx) { declared.PopFrame(); };
+      closeEventMap[ParserState::block] = [this](srcSAXEventContext &ctx) {
+          //declared.PopFrame();
+          };
 
       //
       // Collecting pointer assignment data
@@ -311,37 +364,38 @@ private:
          if (ctx.IsOpen(ParserState::classn)) {
             if (!gotClassName.top()) {
                Class current = declData.classTracker.GetClass(ctx.currentToken);
-
-               if(current.className != "") {
-                  for(Function f : current.methods) {
-                     declared.AddFuncToFrame(f);
-                  }
-                  for(Variable v : current.members) {
-                     declared.AddVarToFrame(v);
-
-                     //If variable is an object, keep track of it's methods and members
-                     if(declData.classTracker.ContainsKey(v.nameoftype)) {
-                        Class classType = declData.classTracker.GetClass(v.nameoftype);
-
-                        std::string accessor = ".";
-                        if(v.isPointer)
-                           accessor = "->";
-
-                        for(int i = 0; i < classType.methods.size(); ++i) {
-                           declared.AddFuncToFrame(v.nameofidentifier + accessor + classType.methods[i].name, classType.methods[i]);
+                if(!isThirdRun) {
+                    if (current.className != "") {
+                        for (Function f : current.methods) {
+                            declared.AddFuncToFrame(f);
                         }
+                        for (Variable v : current.members) {
+                            declared.AddVarToFrame(v);
 
-                        for(int i = 0; i < classType.members.size(); ++i) {
-                           Variable v = classType.members[i];
-                           std::string newName = v.nameofidentifier + accessor + v.nameofidentifier;
-                           v.nameofidentifier = newName;
-                           declared.AddVarToFrame(v);
+                            //If variable is an object, keep track of it's methods and members
+                            if (declData.classTracker.ContainsKey(v.nameoftype)) {
+                                Class classType = declData.classTracker.GetClass(v.nameoftype);
+
+                                std::string accessor = ".";
+                                if (v.isPointer)
+                                    accessor = "->";
+
+                                for (int i = 0; i < classType.methods.size(); ++i) {
+                                    declared.AddFuncToFrame(v.nameofidentifier + accessor + classType.methods[i].name,
+                                                            classType.methods[i]);
+                                }
+
+                                for (int i = 0; i < classType.members.size(); ++i) {
+                                    Variable v = classType.members[i];
+                                    std::string newName = v.nameofidentifier + accessor + v.nameofidentifier;
+                                    v.nameofidentifier = newName;
+                                    declared.AddVarToFrame(v);
+                                }
+                            }
+
                         }
-                     }
-
-                  }
-               }
-
+                    }
+                }
                gotClassName.top() = true;
             }
          }
@@ -365,5 +419,4 @@ private:
       };
    }
 };
-
 #endif

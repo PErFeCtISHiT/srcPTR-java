@@ -33,7 +33,7 @@
 #include <vector>
 #include <unordered_map>
 #include <cstring>
-
+#include <stack>
 struct Variable {
    Variable() {
      Clear();
@@ -94,6 +94,7 @@ struct Variable {
    bool isReference;
    bool isPointer;
    bool isStatic;
+   std::stack<std::string> className;
 };
 
 std::ostream &operator<<(std::ostream &sout, const Variable &var) {
@@ -186,12 +187,24 @@ public:
    }
 
    bool ContainsVariableName(std::string name) {
+       for (auto i = variables.begin(); i != variables.end(); ++i) {
+           if (std::strstr(name.c_str(),i->second.nameofidentifier.c_str()))
+               return true;
+       }
       return (variables.find(name) != variables.end());
    }
     void ContainsAndAddVariableName(std::string name,std::vector<Variable> *ret) {
         for (auto i = variables.begin(); i != variables.end(); ++i) {
-            if (std::strstr(name.c_str(),i->second.nameofidentifier.c_str()))
+            if (!i->second.nameofidentifier.empty() && std::strstr(name.c_str(),i->second.nameofidentifier.c_str())) {
+                bool addFlag = true;
+                for (const Variable& v : *ret) {
+                    if (i->second.nameofidentifier == v.nameofidentifier && i->second.nameoftype == v.nameoftype)
+                    addFlag = false;
+                    break;
+                }
+                if(addFlag)
                 ret->push_back(variables[i->second.nameofidentifier]);
+            }
         }
     }
    Variable GetVar(std::string name) {
@@ -244,6 +257,7 @@ public:
    }
 
    void AddVarToFrame(Variable var) {
+
       declared.begin()->AddVar(var);
    }
 
@@ -281,7 +295,6 @@ public:
       Function func; 
       return func;
    }
-
 private:
    std::deque<DeclFrame> declared;
 };
@@ -322,7 +335,10 @@ public:
 class ClassTracker {
 public:
    Class GetClass(std::string name) {
-      return classes[name]; 
+      return classes[name];
+   }
+   Class* GetClassAddress(std::string name){
+       return &classes[name];
    }
 
    void AddClass(Class toAdd,std::string filename = "") {
@@ -330,12 +346,53 @@ public:
       classes[toAdd.className].filename = std::move(filename);
    }
 
-   bool ContainsKey(std::string name) { 
+   bool ContainsKey(std::string name) {
       return (classes.find(name) != classes.end());
    }
+   Class GetClassByMemberName(std::string name){
+       for(const auto& a : classes){
+           for(const Variable& variable : a.second.members){
+               if(variable.nameofidentifier == name){
+                   return a.second;
+               }
+           }
+       }
+   }
+   Class* GetClassAddressByMemberName(std::string name){
+        for(auto& a : classes){
+            for(const Variable& variable : a.second.members){
+                if(variable.nameofidentifier == name){
+                    return &a.second;
+                }
+            }
+        }
+    }
 
 private:
    std::map<std::string, Class> classes;
 };
+class DataDependency {
+public:
+    DataDependency(Class class1,Class class2,Variable variable1,Variable variable2){
+        sender.first = class2;
+        sender.second = variable2;
+        accepter.first = class1;
+        accepter.second = variable1;
+    }
 
+private:
+    std::pair<Class,Variable> sender;
+    std::pair<Class,Variable> accepter;
+};
+class klass{
+public:
+    ~klass(){
+
+    }
+    klass(std::string s) {
+        str = s;
+    }
+private:
+    std::string str;
+};
 #endif

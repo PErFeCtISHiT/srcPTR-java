@@ -26,7 +26,7 @@
 #include <srcPtrDeclPolicy.hpp>
 #include <srcPtrPolicy.hpp>
 #include <srcPtrPolicyTemplates.hpp>
-
+#include <srcPtrUtilities.hpp>
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -90,12 +90,21 @@ int main(int argc, char *argv[]) {
          srcPtrPolicy<srcPtrAndersen> *policy = new srcPtrPolicy<srcPtrAndersen>(declData);
 
          // Second Run
-         srcSAXController control2(vm["input"].as<std::vector<std::string>>()[1].c_str());
-         srcSAXEventDispatch::srcSAXEventDispatcher<> handler2{policy};
-         control2.parse(&handler2);
-         srcSAXController control2l(vm["input"].as<std::vector<std::string>>()[0].c_str());
-         control2l.parse(&handler2);
+          srcSAXEventDispatch::srcSAXEventDispatcher<> handler2{policy};
+          for(const std::string& str : vm["input"].as<std::vector<std::string>>()) {
+              srcSAXController control(str.c_str());
+              control.parse(&handler2);
+          }
+
+          // Third Run
+          policy->setThirdRun();
+          for(const std::string& str : vm["input"].as<std::vector<std::string>>()) {
+              srcSAXController control(str.c_str());
+              control.parse(&handler2);
+              std::cout << 1;
+          }
          data = policy->GetData();
+          std::vector<DataDependency> *dependencies = policy->GetDataDependencies();
          if(vm.count("graphviz"))
             data->PrintGraphViz();
          else
