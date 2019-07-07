@@ -188,22 +188,26 @@ public:
 
    bool ContainsVariableName(std::string name) {
        for (auto i = variables.begin(); i != variables.end(); ++i) {
-           if (std::strstr(name.c_str(),i->second.nameofidentifier.c_str()))
-               return true;
+           if (!i->first.empty() && std::strstr(name.c_str(),i->first.c_str()))
+               if(!i->second.nameofidentifier.empty()) {
+                   if(!variables[name].nameofidentifier.empty())
+                   return true;
+               }
        }
       return (variables.find(name) != variables.end());
    }
-    void ContainsAndAddVariableName(std::string name,std::vector<Variable> *ret) {
+    void ContainsAndAddVariableName(std::string name,std::vector<Variable*> *ret) {
         for (auto i = variables.begin(); i != variables.end(); ++i) {
             if (!i->second.nameofidentifier.empty() && std::strstr(name.c_str(),i->second.nameofidentifier.c_str())) {
                 bool addFlag = true;
-                for (const Variable& v : *ret) {
-                    if (i->second.nameofidentifier == v.nameofidentifier && i->second.nameoftype == v.nameoftype)
-                    addFlag = false;
-                    break;
+                for (const Variable* v : *ret) {
+                    if (i->second.nameofidentifier == v->nameofidentifier && i->second.nameoftype == v->nameoftype) {
+                        addFlag = false;
+                        break;
+                    }
                 }
                 if(addFlag)
-                ret->push_back(variables[i->second.nameofidentifier]);
+                ret->push_back(&variables[i->second.nameofidentifier]);
             }
         }
     }
@@ -270,8 +274,8 @@ public:
       Variable var; 
       return var;
    }
-   std::vector<Variable> GetPreviousVarOccurences(std::string name){
-       std::vector<Variable> ret;
+   std::vector<Variable*> GetPreviousVarOccurences(std::string name){
+       std::vector<Variable*> ret;
        for (auto it = declared.begin(); it != declared.end(); ++it) {
            it->ContainsAndAddVariableName(name,&ret);
        }
@@ -366,6 +370,7 @@ public:
                 }
             }
         }
+       return nullptr;
     }
 
 private:
@@ -373,16 +378,16 @@ private:
 };
 class DataDependency {
 public:
-    DataDependency(Class class1,Class class2,Variable variable1,Variable variable2){
+    DataDependency(std::string class1,std::string class2,std::string variable1,std::string variable2){
         sender.first = class2;
         sender.second = variable2;
         accepter.first = class1;
         accepter.second = variable1;
     }
 
-private:
-    std::pair<Class,Variable> sender;
-    std::pair<Class,Variable> accepter;
+
+    std::pair<std::string,std::string> sender;
+    std::pair<std::string,std::string> accepter;
 };
 class klass{
 public:

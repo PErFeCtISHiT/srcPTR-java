@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="srcPtr"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\srcSAX\;CMake Files\srcSAX\src\;CMake Files\srcSAXEventDispatch\;CMake Files\srcSAXEventDispatch\src\;CMake Files\src\;CMake Files\test\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test">
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="srcsax_static">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/libsrcsax.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 srcsax_static"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="srcsax_static/fast">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/libsrcsax.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 srcsax_static/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="srcsax_shared">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/libsrcsax.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 srcsax_shared"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="srcsax_shared/fast">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/libsrcsax.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 srcsax_shared/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAX/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="srcsaxeventdispatch">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/libsrcsaxeventdispatch.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAXEventDispatch/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAXEventDispatch/src/Makefile&quot;  VERBOSE=1 srcsaxeventdispatch"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAXEventDispatch/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAXEventDispatch/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAXEventDispatch/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="srcsaxeventdispatch/fast">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/libsrcsaxeventdispatch.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAXEventDispatch/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAXEventDispatch/src/Makefile&quot;  VERBOSE=1 srcsaxeventdispatch/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAXEventDispatch/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAXEventDispatch/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/srcSAXEventDispatch/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="srcptr">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/srcptr" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 srcptr"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="srcptr/fast">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/srcptr" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 srcptr/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TestDisjointSet">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/TestDisjointSet" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 TestDisjointSet"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TestDisjointSet/fast">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/TestDisjointSet" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 TestDisjointSet/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TestsrcPtrDeclPolicy">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/TestsrcPtrDeclPolicy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 TestsrcPtrDeclPolicy"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TestsrcPtrDeclPolicy/fast">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/TestsrcPtrDeclPolicy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 TestsrcPtrDeclPolicy/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TestsrcPtrUtilities">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/TestsrcPtrUtilities" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 TestsrcPtrUtilities"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TestsrcPtrUtilities/fast">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/TestsrcPtrUtilities" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 TestsrcPtrUtilities/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TestsrcPtrPolicy">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/TestsrcPtrPolicy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 TestsrcPtrPolicy"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TestsrcPtrPolicy/fast">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/TestsrcPtrPolicy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 TestsrcPtrPolicy/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TestClassPolicy">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/TestClassPolicy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 TestClassPolicy"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TestClassPolicy/fast">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/TestClassPolicy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 TestClassPolicy/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TestCallPolicy">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/TestCallPolicy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 TestCallPolicy"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TestCallPolicy/fast">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/TestCallPolicy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 TestCallPolicy/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TestsrcPtrPolicyTemplates">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/TestsrcPtrPolicyTemplates" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 TestsrcPtrPolicyTemplates"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TestsrcPtrPolicyTemplates/fast">
+				<Option output="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin/TestsrcPtrPolicyTemplates" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/somnus/CLionProjects/srcPtr/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/src"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher"/>
+					<Add directory="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 TestsrcPtrPolicyTemplates/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/somnus/CLionProjects/srcPtr/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/src/srcptr.cpp">
+			<Option target="srcptr"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp/cppCallbackAdapter.hpp">
+			<Option target="srcsax_static"/>
+			<Option target="srcsax_shared"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp/srcSAXController.cpp">
+			<Option target="srcsax_static"/>
+			<Option target="srcsax_shared"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp/srcSAXController.hpp">
+			<Option target="srcsax_static"/>
+			<Option target="srcsax_shared"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAX/src/cpp/srcSAXHandler.hpp">
+			<Option target="srcsax_static"/>
+			<Option target="srcsax_shared"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax/sax2_srcsax_handler.cpp">
+			<Option target="srcsax_static"/>
+			<Option target="srcsax_shared"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax/sax2_srcsax_handler.hpp">
+			<Option target="srcsax_static"/>
+			<Option target="srcsax_shared"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax/srcml_element.hpp">
+			<Option target="srcsax_static"/>
+			<Option target="srcsax_shared"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAX/src/srcsax/srcsax_controller.cpp">
+			<Option target="srcsax_static"/>
+			<Option target="srcsax_shared"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows/windows_utils.cpp">
+			<Option target="srcsax_static"/>
+			<Option target="srcsax_shared"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAX/src/windows/windows_utils.hpp">
+			<Option target="srcsax_static"/>
+			<Option target="srcsax_shared"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher/srcSAXEventDispatchUtilities.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher/srcSAXEventDispatcher.cpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher/srcSAXEventDispatcher.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/dispatcher/srcSAXSingleEventDispatcher.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/ClassPolicy.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/ClassPolicySingleEvent.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/CollectNLContext.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/DeclDS.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/DeclTypePolicy.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/DeclTypePolicySingleEvent.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/ExprPolicy.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/FunctionCallPolicy.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/FunctionPolicySingleEvent.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/FunctionSignaturePolicy.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/NamePolicySingleEvent.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/ParamTypePolicy.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/ParamTypePolicySingleEvent.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/SNLPolicy.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/StereotypePolicy.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/TemplateArgumentPolicySingleEvent.cpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/TemplateArgumentPolicySingleEvent.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/TypePolicySingleEvent.cpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/TypePolicySingleEvent.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/policy_classes/srcSlicePolicy.hpp">
+			<Option target="srcsaxeventdispatch"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/test/TestCallPolicy.cpp">
+			<Option target="TestCallPolicy"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/test/TestClassPolicy.cpp">
+			<Option target="TestClassPolicy"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/test/TestDisjointSet.cpp">
+			<Option target="TestDisjointSet"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/test/TestsrcPtrDeclPolicy.cpp">
+			<Option target="TestsrcPtrDeclPolicy"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/test/TestsrcPtrPolicy.cpp">
+			<Option target="TestsrcPtrPolicy"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/test/TestsrcPtrPolicyTemplates.cpp">
+			<Option target="TestsrcPtrPolicyTemplates"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/test/TestsrcPtrUtilities.cpp">
+			<Option target="TestsrcPtrUtilities"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAX/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\srcSAX\src\"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/srcSAXEventDispatch/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\srcSAXEventDispatch\src\"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/home/somnus/CLionProjects/srcPtr/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

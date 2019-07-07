@@ -1,0 +1,7 @@
+/home/somnus/下载/CLion-2019.1.4/clion-2019.1.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/somnus/CLionProjects/srcPtr
+-- Boost version: 1.65.1
+-- Found the following Boost libraries:
+--   program_options
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/somnus/CLionProjects/srcPtr/cmake-build-debug

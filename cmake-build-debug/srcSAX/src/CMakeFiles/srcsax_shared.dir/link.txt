@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libsrcsax.so -o ../../bin/libsrcsax.so CMakeFiles/srcsax_shared.dir/cpp/srcSAXController.cpp.o CMakeFiles/srcsax_shared.dir/srcsax/sax2_srcsax_handler.cpp.o CMakeFiles/srcsax_shared.dir/srcsax/srcsax_controller.cpp.o CMakeFiles/srcsax_shared.dir/windows/windows_utils.cpp.o -lxml2 

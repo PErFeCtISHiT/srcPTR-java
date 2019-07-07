@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../bin/libsrcsaxeventdispatch.a  CMakeFiles/srcsaxeventdispatch.dir/dispatcher/srcSAXEventDispatcher.cpp.o CMakeFiles/srcsaxeventdispatch.dir/policy_classes/TemplateArgumentPolicySingleEvent.cpp.o CMakeFiles/srcsaxeventdispatch.dir/policy_classes/TypePolicySingleEvent.cpp.o
+/usr/bin/ranlib ../../bin/libsrcsaxeventdispatch.a

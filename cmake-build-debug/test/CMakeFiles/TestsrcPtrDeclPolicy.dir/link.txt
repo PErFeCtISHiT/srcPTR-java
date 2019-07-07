@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/TestsrcPtrDeclPolicy.dir/TestsrcPtrDeclPolicy.cpp.o  -o ../bin/TestsrcPtrDeclPolicy ../bin/libsrcsaxeventdispatch.a ../bin/libsrcsax.a -lsrcml -lxml2 

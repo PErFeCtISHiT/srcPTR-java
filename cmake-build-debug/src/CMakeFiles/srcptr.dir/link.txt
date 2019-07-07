@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/srcptr.dir/srcptr.cpp.o  -o ../bin/srcptr ../bin/libsrcsaxeventdispatch.a ../bin/libsrcsax.a -lxml2 -lboost_program_options 

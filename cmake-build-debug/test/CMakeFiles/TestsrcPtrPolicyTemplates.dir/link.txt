@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/TestsrcPtrPolicyTemplates.dir/TestsrcPtrPolicyTemplates.cpp.o  -o ../bin/TestsrcPtrPolicyTemplates ../bin/libsrcsaxeventdispatch.a ../bin/libsrcsax.a -lsrcml -lxml2 

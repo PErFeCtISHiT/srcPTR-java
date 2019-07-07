@@ -145,10 +145,8 @@ public:
 	   
             //Identify function that was called
             Function called = declared.GetPreviousFuncOccurence(it->first, it->second.size());
-
             if(called.name == "")
                called = declData.functionTracker.GetFunction(it->first, it->second.size());
-
             if(called.name == "")
                continue;
 
@@ -157,8 +155,7 @@ public:
                std::string name = *it2;
                if(name != "*LITERAL*") {
                   Variable var = called.parameters[i];
-
-                  ResolveAssignment(var, "", name, ""); //TODO: take into account modifiers
+                  ResolveAssignment(var, "", name, "",false); //TODO: take into account modifiers
                }
                ++i;
             }
@@ -187,7 +184,12 @@ public:
         return &Dependencies;
    }
 
-
+    void printResult(){
+        for(DataDependency dataDependency : this->Dependencies){
+            std::cout << "accepter"<< std::endl << "class: " << dataDependency.accepter.first << std::endl << "variable name: " << dataDependency.accepter.second << std::endl;
+            std::cout << "sender"<<std::endl << "class: " << dataDependency.sender.first << std::endl << "variable name: " << dataDependency.sender.second << std::endl;
+        }
+    }
 protected:
    void *DataInner() const override {
       return data.Clone();
@@ -230,33 +232,60 @@ private:
       withinDeclAssignment = false;
    }
 
-   void ResolveAssignmentDataDependency(std::string left,std::string right){
+
+   void ResolveAssignmentDataDependency(std::string left,std::string right,bool callFlag = false){
        if (left.find("this.") != std::string::npos)
            left = left.substr(5);
        if(right.find("this.") != std::string::npos)
            right = right.substr(5);
-       Variable leftVar = declared.GetPreviousVarOccurence(left);
+       std::vector<Variable*> leftVars = declared.GetPreviousVarOccurences(left);
+       if(leftVars.empty() && !callFlag)
+           exit(-1);
+       Variable *leftVar;
+       for(Variable* v : leftVars){
+           if(v->nameofidentifier == left){
+               leftVar = v;
+               break;
+           }
+       }
+       if(leftVar == nullptr){
+           leftVar = new Variable;
+           leftVar->nameofidentifier = left;
+       }
        Class *leftClass;
        if(left.find('.') != std::string::npos)
            leftClass = declData.classTracker.GetClassAddress(left.substr(0,left.find('.')));
        else
            leftClass = declData.classTracker.GetClassAddressByMemberName(left);
-       if(!leftClass->className.empty())
-           leftVar.className.push(leftClass->className);
+       if(leftClass != nullptr && !leftClass->className.empty())
+           leftVar->className.push(leftClass->className);
        right = right.substr(right.find('.') + 1);
-       std::vector<Variable> rightVars = declared.GetPreviousVarOccurences(right);
-       for(Variable v : rightVars){
+       std::vector<Variable*> rightVars = declared.GetPreviousVarOccurences(right);
+       for(Variable *v : rightVars){
            Class *rightClass = declData.classTracker.GetClassAddressByMemberName(right);
-           if(leftClass->className != rightClass->className) {
-
-               DataDependency dataDependency(*leftClass, *rightClass, leftVar, v);
+           if(leftClass != nullptr && rightClass != nullptr && leftClass->className != rightClass->className) {
+               leftVar->className.push(rightClass->className);
+               DataDependency dataDependency(leftClass->className, rightClass->className, leftVar->nameofidentifier, v->nameofidentifier);
                Dependencies.push_back(dataDependency);
            }
-           if(!v.className.empty()){
-               Class *rightClass1 = declData.classTracker.GetClassAddress(v.className.top());
-               if(leftClass->className != rightClass1->className) {
-                   DataDependency dataDependency1(*leftClass, *rightClass1, leftVar, v);
-                   Dependencies.push_back(dataDependency1);
+           //method call
+           else if(leftClass == nullptr && rightClass != nullptr){
+               leftVar->className.push(rightClass->className);
+               DataDependency dataDependency("", rightClass->className, leftVar->nameofidentifier, v->nameofidentifier);
+               Dependencies.push_back(dataDependency);
+           }
+           if(!v->className.empty()){
+               Class *rightClass1 = declData.classTracker.GetClassAddress(v->className.top());
+               if(leftClass != nullptr && rightClass1 != nullptr && leftClass->className != rightClass1->className) {
+                   leftVar->className.push(rightClass1->className);
+                   DataDependency dataDependency(leftClass->className, rightClass1->className, leftVar->nameofidentifier, v->nameofidentifier);
+                   Dependencies.push_back(dataDependency);
+               }
+                   //method call
+               else if(leftClass == nullptr && rightClass1 != nullptr){
+                   leftVar->className.push(rightClass1->className);
+                   DataDependency dataDependency("", rightClass1->className, leftVar->nameofidentifier, v->nameofidentifier);
+                   Dependencies.push_back(dataDependency);
                }
            }
        }
@@ -269,36 +298,36 @@ private:
           ResolveAssignmentDataDependency(left,right);
       }
 
-      if(!rightVar.empty()) {
-         if(leftVar.isPointer && (modifierleft != "*")) {
-            if(modifierright == "&")
-               data.AddPointsToRelationship(leftVar, rightVar);
-            else
-               data.AddAssignmentRelationship(leftVar, rightVar);
-         }
-         else if (leftVar.isReference) {
-            data.AddPointsToRelationship(leftVar, rightVar);
-         }
-      }
+//      if(!rightVar.empty()) {
+//         if(leftVar.isPointer && (modifierleft != "*")) {
+//            if(modifierright == "&")
+//               data.AddPointsToRelationship(leftVar, rightVar);
+//            else
+//               data.AddAssignmentRelationship(leftVar, rightVar);
+//         }
+//         else if (leftVar.isReference) {
+//            data.AddPointsToRelationship(leftVar, rightVar);
+//         }
+//      }
    }
 
-   void ResolveAssignment(Variable leftVar, std::string modifierleft, std::string right, std::string modifierright) {
-      std::vector<Variable> rightVars = declared.GetPreviousVarOccurences(right);
-       for (auto rightVar : rightVars) {
-           if(!rightVar.empty()) {
-               if(leftVar.isPointer && (modifierleft != "*")) {
-                   if(modifierright == "&")
-                       data.AddPointsToRelationship(leftVar, rightVar);
-                   else
-                       data.AddAssignmentRelationship(leftVar, rightVar);
-               }
-               else if (leftVar.isReference) {
-                   data.AddPointsToRelationship(leftVar, rightVar);
-               }
-           }
-       }
-       if(isThirdRun){
-           ResolveAssignmentDataDependency(leftVar.nameofidentifier,right);
+   void ResolveAssignment(Variable leftVar, std::string modifierleft, std::string right, std::string modifierright,bool callFlag = false) {
+      std::vector<Variable*> rightVars = declared.GetPreviousVarOccurences(right);
+//       for (auto rightVar : rightVars) {
+//           if(!rightVar->empty()) {
+//               if(leftVar.isPointer && (modifierleft != "*")) {
+//                   if(modifierright == "&")
+//                       data.AddPointsToRelationship(leftVar, *rightVar);
+//                   else
+//                       data.AddAssignmentRelationship(leftVar, *rightVar);
+//               }
+//               else if (leftVar.isReference) {
+//                   data.AddPointsToRelationship(leftVar, *rightVar);
+//               }
+//           }
+//       }
+       if(isThirdRun || callFlag){
+           ResolveAssignmentDataDependency(leftVar.nameofidentifier,right,callFlag);
        }
    }
 

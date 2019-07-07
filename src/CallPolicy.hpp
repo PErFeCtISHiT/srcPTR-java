@@ -50,6 +50,10 @@ public:
    ~CallPolicy(){}
    CallPolicy(std::initializer_list<srcSAXEventDispatch::PolicyListener *> listeners = {}): srcSAXEventDispatch::PolicyDispatcher(listeners){
       InitializeEventHandlers();
+      isThirdRun = false;
+   }
+   void setThirdRun(){
+       isThirdRun = true;
    }
    void Notify(const PolicyDispatcher * policy, const srcSAXEventDispatch::srcSAXEventContext & ctx) override {}
 protected:
@@ -58,6 +62,8 @@ protected:
    }
 private:
    CallData data;
+   std::vector<DataDependency> Dependencies;
+   bool isThirdRun;
    std::string currentTypeName, currentCallName, currentModifier, currentSpecifier;
    std::string fullFuncIdentifier;
    void InitializeEventHandlers(){

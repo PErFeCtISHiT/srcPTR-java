@@ -77,6 +77,7 @@ int main(int argc, char *argv[]) {
           control.parse(&handler);
       }
 
+
       if(vm.count("timer")) {
          auto end = std::chrono::high_resolution_clock::now();
          std::cerr << "\n\n" << std::chrono::duration<double, std::milli>(end-start).count() << "ms passed from the first policy's execution." << std::endl;
@@ -101,14 +102,14 @@ int main(int argc, char *argv[]) {
           for(const std::string& str : vm["input"].as<std::vector<std::string>>()) {
               srcSAXController control(str.c_str());
               control.parse(&handler2);
-              std::cout << 1;
+              policy->printResult();
           }
          data = policy->GetData();
           std::vector<DataDependency> *dependencies = policy->GetDataDependencies();
-         if(vm.count("graphviz"))
-            data->PrintGraphViz();
-         else
-            data->Print();
+//         if(vm.count("graphviz"))
+//            data->PrintGraphViz();
+//         else
+//            data->Print();
 
       } else if(vm.count("steensgaard")) {
 
