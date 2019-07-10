@@ -19,9 +19,11 @@
 # along with srcPtr.  If not, see <http://www.gnu.org/licenses/>.
 
 file(GLOB SOURCE *.cpp)
-file(GLOB HEADER *.hpp)
+file(GLOB HEADER *.hpp,*.h)
 
 add_definitions("-Wall")
 
-add_executable(srcptr  ${HEADERS} ${SOURCE})
-target_link_libraries(srcptr srcsaxeventdispatch srcsax_static ${LIBXML2_LIBRARIES} ${Boost_LIBRARIES})
+set (LIB_DIR_LOCATION ${NAME}/lib)
+find_library(SQLite3 NAMES sqlite3 PATHS ${LIB_DIR_LOCATION})
+add_executable(srcptr  ${HEADERS} ${SOURCE} test.cpp)
+target_link_libraries(srcptr srcsaxeventdispatch sqlite3 srcsax_static ${LIBXML2_LIBRARIES} ${Boost_LIBRARIES})

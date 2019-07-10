@@ -41,6 +41,11 @@
 #include <vector>
 #include <utility>
 
+#include "sqlite3.h"
+#pragma comment(lib, "sqlite3.lib")
+sqlite3 *srcDB = nullptr;
+#define BUFFERROW 400000
+#define FDBSIZE 750
 /*
 class T must implement:
    void AddPointsToRelationship(Variable, Variable);
@@ -51,7 +56,18 @@ class T must implement:
    std::vector<Variable> GetPointers();
    srcPtrData *Clone();
 */
-
+static char FaDBBuffer[BUFFERROW][FDBSIZE];
+static int FaBufferCount = 0;
+static void writeDB()
+{
+    sqlite3_exec(srcDB, "BEGIN TRANSACTION;", nullptr, nullptr, nullptr);
+    for (int i = 0; i < FaBufferCount; i++)
+    {
+        sqlite3_exec(srcDB, FaDBBuffer[i], nullptr, nullptr, nullptr);
+    }
+    sqlite3_exec(srcDB, "COMMIT TRANSACTION;", nullptr, nullptr, nullptr);
+    FaBufferCount = 0;
+}
 template <class T>
 class srcPtrPolicy : public srcSAXEventDispatch::EventListener, public srcSAXEventDispatch::PolicyDispatcher, public srcSAXEventDispatch::PolicyListener {
 public:
@@ -185,10 +201,20 @@ public:
    }
 
     void printResult(){
+        sqlite3_open("srcptr.db",&srcDB);
         for(DataDependency dataDependency : this->Dependencies){
-            std::cout << "accepter"<< std::endl << "class: " << dataDependency.accepter.first << std::endl << "variable name: " << dataDependency.accepter.second << std::endl;
-            std::cout << "sender"<<std::endl << "class: " << dataDependency.sender.first << std::endl << "variable name: " << dataDependency.sender.second << std::endl;
+            if (FaBufferCount >= BUFFERROW) writeDB();
+            sprintf(FaDBBuffer[FaBufferCount],
+                    "INSERT INTO fieldAccess(accepterClass,accepterVariableName,senderClass,senderVariableName)VALUES('%s','%s','%s','%s')",
+                    dataDependency.accepter.first.c_str(),
+                    dataDependency.accepter.second.c_str(),
+                    dataDependency.sender.first.c_str(),
+                    dataDependency.sender.second.c_str()
+            );
+            FaBufferCount++;
         }
+        writeDB();
+        sqlite3_close(srcDB);
     }
 protected:
    void *DataInner() const override {

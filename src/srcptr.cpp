@@ -33,11 +33,33 @@
 #include <chrono>
 
 #include <boost/program_options.hpp>
-
+#include <dirent.h>
+int fileCount = 0;
+char childpath[1000][512];
+void lsDir(const char *path,std::vector<char *> * files){
+    DIR *dp = opendir(path);
+    if(dp == nullptr){
+        return;
+    }
+    struct dirent * filename;
+    while ((filename = readdir(dp)) != nullptr){
+        if(filename->d_type & DT_DIR){
+            if(strcmp(filename->d_name,".")==0 || strcmp(filename->d_name,"..")==0)
+                continue;
+            fileCount++;
+            sprintf(childpath[fileCount],"%s/%s",path,filename->d_name);
+            lsDir(childpath[fileCount],files);
+        } else if(strstr(filename->d_name,".java.xml")){
+            fileCount++;
+            sprintf(childpath[fileCount],"%s/%s",path,filename->d_name);
+            files->push_back(childpath[fileCount]);
+        }
+    }
+}
 int main(int argc, char *argv[]) {
 
    namespace po = boost::program_options;
-
+    memset(childpath,0,sizeof(childpath));
    po::options_description generic("Options");
    generic.add_options()
       ("help", "produce help message")
@@ -68,10 +90,11 @@ int main(int argc, char *argv[]) {
       auto start = std::chrono::high_resolution_clock::now();
 
       srcPtrDeclPolicy *declpolicy = new srcPtrDeclPolicy();
-
+       std::vector<char *> files;
+      lsDir(vm["input"].as<std::vector<std::string>>()[0].c_str(),&files);
       // First Run
        srcSAXEventDispatch::srcSAXEventDispatcher<> handler{declpolicy}; //TODO: correct policy usage
-      for(const std::string& str : vm["input"].as<std::vector<std::string>>()) {
+      for(const std::string& str : files) {
           srcSAXController control(str.c_str());
           declpolicy->data.filename = str;
           control.parse(&handler);
@@ -92,20 +115,31 @@ int main(int argc, char *argv[]) {
 
          // Second Run
           srcSAXEventDispatch::srcSAXEventDispatcher<> handler2{policy};
-          for(const std::string& str : vm["input"].as<std::vector<std::string>>()) {
+          for(const std::string& str : files) {
               srcSAXController control(str.c_str());
               control.parse(&handler2);
           }
 
           // Third Run
+          int dbflag = sqlite3_open("srcptr.db",&srcDB);
+          if(dbflag){
+              fprintf(stderr, "Can't open database: %s \n", sqlite3_errmsg(srcDB));
+              sqlite3_close(srcDB);
+              exit(1);
+          }
+          int tableflag = sqlite3_exec(srcDB, "CREATE TABLE fieldAccess(accepterClass,accepterVariableName,senderClass,senderVariableName,\
+							  constraint cons_01 unique (accepterClass,accepterVariableName,senderClass,senderVariableName));"
+                  , nullptr, nullptr, reinterpret_cast<char **>(&srcDB));
+          if (tableflag) printf("%s\n", srcDB);
+          sqlite3_close(srcDB);
           policy->setThirdRun();
-          for(const std::string& str : vm["input"].as<std::vector<std::string>>()) {
+          for(const std::string& str : files) {
               srcSAXController control(str.c_str());
               control.parse(&handler2);
               policy->printResult();
           }
-         data = policy->GetData();
-          std::vector<DataDependency> *dependencies = policy->GetDataDependencies();
+//         data = policy->GetData();
+//          std::vector<DataDependency> *dependencies = policy->GetDataDependencies();
 //         if(vm.count("graphviz"))
 //            data->PrintGraphViz();
 //         else
